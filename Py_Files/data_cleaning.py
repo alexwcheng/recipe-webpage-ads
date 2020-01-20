@@ -237,7 +237,25 @@ df['Vitamin_B3'] = Vitamin_B3
 df['Calcium'] = Calcium
 df['Selenium'] = Selenium
 
+df["num_words_instructions"] = df.apply(lambda _: '', axis=1)
+for index, value in enumerate(df.instructions):
+    if type(value) == str:
+        df["num_words_instructions"][index] = len(value.split())
+    else:
+        df["num_words_instructions"][index] = 0
+
+df["num_steps_instructions"] = df.apply(lambda _: '', axis=1)
+for index, value in enumerate(df.analyzedInstructions):
+    if type(value) == str:
+        substring = '''{'number': '''
+        count = value.count(substring)
+        df["num_steps_instructions"][index] = count
+    else:
+        df["num_steps_instructions"][index] = 0
+
+
 df = df.drop(columns=['cuisines', 'creditsText', 'occasions', 'nutrition', 'nutrition_info',
-                      'license', 'image', 'imageType', 'sourceName', 'sourceUrl', 'cheap', 'gaps', 'winePairing'])
+                      'license', 'image', 'imageType', 'sourceName', 'sourceUrl', 'cheap', 'gaps',
+                      'winePairing', 'instructions', 'Unnamed: 0'])
 
 df.to_csv('../Data/Recipes.csv')
