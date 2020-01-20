@@ -3,6 +3,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib as plt
 import json
+from collections import Counter
 %matplotlib inline
 
 with open("/Users/flatironschooldc3/FlatironSchoolRepo/Projects/Recipes/Data/top_1000_recipes_info.json") as datafile:
@@ -237,25 +238,38 @@ df['Vitamin_B3'] = Vitamin_B3
 df['Calcium'] = Calcium
 df['Selenium'] = Selenium
 
-df["num_words_instructions"] = df.apply(lambda _: '', axis=1)
+df["num_words_instructions"] = df.apply(lambda _: 0, axis=1)
 for index, value in enumerate(df.instructions):
     if type(value) == str:
         df["num_words_instructions"][index] = len(value.split())
-    else:
-        df["num_words_instructions"][index] = 0
 
-df["num_steps_instructions"] = df.apply(lambda _: '', axis=1)
+df["num_steps_instructions"] = df.apply(lambda _: 0, axis=1)
 for index, value in enumerate(df.analyzedInstructions):
     if type(value) == str:
         substring = '''{'number': '''
         count = value.count(substring)
         df["num_steps_instructions"][index] = count
-    else:
-        df["num_steps_instructions"][index] = 0
 
+
+df['ingredients_list'] = df.apply(lambda _: '', axis=1)
+df['ingredient_types'] = df.apply(lambda _: '', axis=1)
+for index, value in enumerate(df.extendedIngredients):
+    ing_list = []
+    ing_types = []
+    ing_counts = []
+    for ind in value:
+        ing_list.append(ind['name'])
+        ing_types.append(ind['aisle'])
+        ing_count = Counter(ing_types)
+    df['ingredients_list'][index] = ing_list
+    df['ingredient_types'][index] = ing_count
 
 df = df.drop(columns=['cuisines', 'creditsText', 'occasions', 'nutrition', 'nutrition_info',
-                      'license', 'image', 'imageType', 'sourceName', 'sourceUrl', 'cheap', 'gaps',
-                      'winePairing', 'instructions', 'Unnamed: 0'])
+                      'license', 'image', 'imageType', 'sourceName', 'sourceUrl', 'cheap',
+                      'gaps', 'winePairing', 'instructions'])
+
+obj_cols = ['aggregateLikes', 'id', 'num_ingredients', 'readyInMinutes', 'servings']
+for col in obj_cols:
+    df[col] = df[col].astype(int)
 
 df.to_csv('../Data/Recipes.csv')
