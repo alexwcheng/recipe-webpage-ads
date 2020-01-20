@@ -8,7 +8,8 @@ Within the project repository, the summary of files are as follows:
    - <b>[/Images](/Images)</b> - all plots from data analysis.
    - <b>[/Jupyter_Notebooks](/Jupyter_Notebooks)</b> - all Jupyter Notebooks generated for this project.
    - <b>[/Project_Prompt](/Project_Prompt)</b> - the prompt for this project.
-
+   - <b>[/Py_Files](/Py_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
+   
 ### Project Members
 The members for this project are:
 
