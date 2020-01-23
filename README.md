@@ -46,5 +46,4 @@ Total U.S. spending on food advertising was $151 billion dollars in 2018. This w
 
 ### Project Responsibilities
 
-#### Alex Cheng
    -  All project responsibilities were shared equally between <b>[Alex Cheng](https://github.com/alexwcheng)</b> and <b>[Nimu Sidhu](https://github.com/gksidhu)</b>.
