@@ -6,6 +6,7 @@ import json
 from collections import Counter
 %matplotlib inline
 
+
 with open("/Users/flatironschooldc3/FlatironSchoolRepo/Projects/Recipes/Data/top_1000_recipes_info.json") as datafile:
   data = json.load(datafile)
 
