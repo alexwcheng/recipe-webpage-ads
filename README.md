@@ -2,7 +2,7 @@
 This README.md lists project members, goals, responsibilities, and a summary of the files in the repository.
 
 ### Project File Summary
-Within the project repository, the summary of files are as follows:
+
    - <b>[README.md](README.md)</b> - a summary of all contents in this repository.
    - <b>[/Data](/Data)</b> - all data called from the Spoonacular API saved out as .csv files.
    - <b>[/Images](/Images)</b> - all plots from data analysis.
@@ -11,24 +11,22 @@ Within the project repository, the summary of files are as follows:
    - <b>[/Python_Files](/Python_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
    
 ### Project Members
-The members for this project are:
 
    - <b>[Alex Cheng](https://github.com/alexwcheng)</b>
    - <b>[Nimu Sidhu](https://github.com/gksidhu)</b>
 
 ### Project Scenario
-The scenario for the project:
 
 Total U.S. spending on food advertising was $151 billion dollars in 2018. This was a 4.1% increase from 2017. According to the New York Times, a person living in a city today sees over 5,000 ads per day, so how can we target successful ad placement in a world where food related ads are everywhere? As a business case study to address this, we work as an ads strategy consultant to businesses selling products and services related to the food industry (Williams-Sonoma, KitchenAid, Blue Apron, Hello Fresh, etc…). They are targeting Spoonacular.com to run ads. Spoonacular is a popular recipe aggregating website and app for users to look up recipes by ingredient, by nutritional content, by price, and more. The Spoonacular API includes over 360,000 recipes as well as an open source recipe database. Our clients only want to spend money to run ads on webpages that they know people will visit a lot. In this case, without knowing how many people visited each recipe page on Spoonacular, we will use “Likes” as our proxy metric for web-traffic.
 
 
 ### Project Goals
-The goals for the project:
 
    -  We want to predict if a recipe will be  "liked" a lot, to understand where to run ads.
    -  We want to build a classification model that will predict whether a recipe will be "highly liked" or not. This way, we will be able to determine where to run ads, when a new recipe is posted on Spoonacular.
 
 ### Methodology 
+
    -  Generate business application.
    -  Find and select a source of data to draw from and analyze (Spoonacular).
    -  Identify predictor and target variables to focus on.
@@ -45,7 +43,6 @@ The goals for the project:
    -  Create a presentation to translate findings into actionable insights for the business application. 
 
 ### Project Responsibilities
-The project responsibilities:
 
 #### Alex Cheng
    -  SHARED - The README.md.
