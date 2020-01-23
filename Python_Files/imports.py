@@ -1,3 +1,5 @@
+import sys
+sys.path.append("..")
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
@@ -23,5 +25,5 @@ from sklearn.linear_model import LassoCV, Lasso, Ridge, LinearRegression, Logist
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import RandomizedSearchCV, cross_val_score
-from sklearn.metrics import roc_curve, auc
+from sklearn.metrics import roc_curve, auc, confusion_matrix
 import scipy.stats as stats

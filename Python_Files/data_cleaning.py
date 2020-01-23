@@ -1,13 +1,34 @@
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import seaborn as sns
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib as plt
+import requests
 import json
+import math
+import sklearn
+from scipy import stats
+from scipy.stats import norm
+from sklearn.utils import resample
+import pickle
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+import scipy.stats as stats
+from wordcloud import WordCloud
+import random
 from collections import Counter
-%matplotlib inline
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LassoCV, Lasso, Ridge, LinearRegression, LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import SGDClassifier
+from sklearn.model_selection import RandomizedSearchCV, cross_val_score
+from sklearn.metrics import roc_curve, auc, confusion_matrix
+import scipy.stats as stats
+import sys
+sys.path.append("..")
 
-
-with open("/Users/flatironschooldc3/FlatironSchoolRepo/Projects/Recipes/Data/top_1000_recipes_info.json") as datafile:
+with open("../Data/top_1000_recipes_info.json") as datafile:
   data = json.load(datafile)
 
 for rec_list in data:
@@ -297,8 +318,8 @@ def scale_num_vars(dataframe):
 
 def categorize_likes(dataframe, column_to_cat):
     dataframe['high_likes'] = df.apply(lambda _: 0, axis=1)
-    for index, value in enumerate(dataframe[columns_to_cat]):
-        if value > dataframe[columns_to_cat].median():
+    for index, value in enumerate(dataframe[column_to_cat]):
+        if value > dataframe[column_to_cat].median():
             dataframe['high_likes'][index] = 1
     return dataframe['high_likes']
 
@@ -318,7 +339,7 @@ numerical_variables = ['num_ingredients',
               'Protein',
               'Vitamin_K',
               'Vitamin_A',
-              'Vitamin_C',
+              'Vitamin_C', 
               'Manganese',
               'Folate',
               'Fiber',
@@ -339,12 +360,15 @@ numerical_variables = ['num_ingredients',
               'num_words_instructions',
               'num_steps_instructions']
 
-def produce_roc_curve(x_train_set, x_test_set):
-    y_train_score = logreg.decision_function(X_train)
-    y_test_score = logreg.decision_function(X_test)
 
-    train_fpr, train_tpr, train_thresholds = roc_curve(y_train, y_train_score)
-    test_fpr, test_tpr, test_thresholds = roc_curve(y_test, y_test_score)
+def produce_roc_curve(x_train_set, x_test_set, y_train_set, y_test_set):
+    logreg = LogisticRegression(fit_intercept=True, C=1656, solver='liblinear', random_state=2020, max_iter = 751751, tol = 0.005)
+    logreg.fit(x_train_set, y_train_set)
+    y_train_score = logreg.decision_function(x_train_set)
+    y_test_score = logreg.decision_function(x_test_set)
+
+    train_fpr, train_tpr, train_thresholds = roc_curve(y_train_set, y_train_score)
+    test_fpr, test_tpr, test_thresholds = roc_curve(y_test_set, y_test_score)
 
     print('Train AUC: {}'.format(auc(train_fpr, train_tpr)))
     print('Test AUC: {}'.format(auc(test_fpr, test_tpr)))
