@@ -273,3 +273,94 @@ for col in obj_cols:
     df[col] = df[col].astype(int)
 
 df.to_csv('../Data/Recipes.csv')
+
+def scale_num_vars(dataframe):
+    cols_to_scale = ['cookingMinutes', 'num_ingredients','preparationMinutes',
+                 'pricePerServing', 'readyInMinutes', 'servings','weightWatcherSmartPoints',
+                'Calories', 'Fat', 'Saturated_Fat', 'Carbohydrates', 'Sugar','Cholesterol',
+                 'Sodium', 'Protein', 'Vitamin_K', 'Vitamin_A','Vitamin_C', 'Manganese',
+                 'Folate', 'Fiber', 'Copper', 'Magnesium','Phosphorus', 'Vitamin_B6',
+                 'Potassium', 'Vitamin_B1', 'Iron','Vitamin_B2', 'Vitamin_E', 'Zinc',
+                 'Vitamin_B5', 'Vitamin_B3','Calcium', 'Selenium', 'num_words_instructions',
+                 'num_steps_instructions']
+    dataframe.drop(columns = ['analyzedInstructions', 'diets', 'extendedIngredients',
+                  'dairyFree','dishTypes','glutenFree','healthScore', 'ketogenic',
+                   'lowFodmap','sustainable', 'veryHealthy', 'veryPopular',], inplace = True)
+    ss = StandardScaler()
+    df_ss = pd.DataFrame(ss.fit_transform(df[cols_to_scale].values), columns=cols_to_scale)
+    df_ss['aggregateLikes'] = df['aggregateLikes']
+    categorical_list = 'ingredients_list', 'ingredient_types', 'title', 'spoonacularSourceUrl'
+    for category in categorical_list:
+        df_ss[category] = df[category]
+    return df_ss
+
+def categorize_likes(dataframe, column_to_cat):
+    dataframe['high_likes'] = df.apply(lambda _: 0, axis=1)
+    for index, value in enumerate(dataframe[columns_to_cat]):
+        if value > dataframe[columns_to_cat].median():
+            dataframe['high_likes'][index] = 1
+    return dataframe['high_likes']
+
+# Place in .py file
+numerical_variables = ['num_ingredients',
+              'pricePerServing',
+              'readyInMinutes',
+              'servings',
+              'weightWatcherSmartPoints',
+              'Calories',
+              'Fat',
+              'Saturated_Fat',
+              'Carbohydrates',
+              'Sugar',
+              'Cholesterol',
+              'Sodium',
+              'Protein',
+              'Vitamin_K',
+              'Vitamin_A',
+              'Vitamin_C',
+              'Manganese',
+              'Folate',
+              'Fiber',
+              'Copper',
+              'Magnesium',
+              'Phosphorus',
+              'Vitamin_B6',
+              'Potassium',
+              'Vitamin_B1',
+              'Iron',
+              'Vitamin_B2',
+              'Vitamin_E',
+              'Zinc',
+              'Vitamin_B5',
+              'Vitamin_B3',
+              'Calcium',
+              'Selenium',
+              'num_words_instructions',
+              'num_steps_instructions']
+
+def produce_roc_curve(x_train_set, x_test_set):
+    y_train_score = logreg.decision_function(X_train)
+    y_test_score = logreg.decision_function(X_test)
+
+    train_fpr, train_tpr, train_thresholds = roc_curve(y_train, y_train_score)
+    test_fpr, test_tpr, test_thresholds = roc_curve(y_test, y_test_score)
+
+    print('Train AUC: {}'.format(auc(train_fpr, train_tpr)))
+    print('Test AUC: {}'.format(auc(test_fpr, test_tpr)))
+
+    plt.figure(figsize=(10, 8))
+    lw = 2
+    plt.plot(train_fpr, train_tpr, color='blue',
+             lw=lw, label='Train ROC curve')
+    plt.plot(test_fpr, test_tpr, color='darkorange',
+             lw=lw, label='Test ROC curve')
+    plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.yticks([i/20.0 for i in range(21)])
+    plt.xticks([i/20.0 for i in range(21)])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver operating characteristic (ROC) Curve')
+    plt.legend(loc='lower right')
+    return plt.show()

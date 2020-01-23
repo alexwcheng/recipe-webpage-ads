@@ -21,3 +21,7 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LassoCV, Lasso, Ridge, LinearRegression, LogisticRegression
 from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import SGDClassifier
+from sklearn.model_selection import RandomizedSearchCV, cross_val_score
+from sklearn.metrics import roc_curve, auc
+import scipy.stats as stats
