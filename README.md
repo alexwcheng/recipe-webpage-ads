@@ -8,7 +8,7 @@ Within the project repository, the summary of files are as follows:
    - <b>[/Images](/Images)</b> - all plots from data analysis.
    - <b>[/Jupyter_Notebooks](/Jupyter_Notebooks)</b> - all Jupyter Notebooks generated for this project.
    - <b>[/Project_Prompt](/Project_Prompt)</b> - the prompt for this project.
-   - <b>[/Py_Files](/Py_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
+   - <b>[/Python_Files](/Python_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
    
 ### Project Members
 The members for this project are:
@@ -17,34 +17,35 @@ The members for this project are:
    - <b>[Nimu Sidhu](https://github.com/gksidhu)</b>
 
 ### Project Scenario
-The scenario for the project is as follows:
+The scenario for the project:
 
-???
+Total U.S. spending on food advertising was $151 billion dollars in 2018. This was a 4.1% increase from 2017. According to the New York Times, a person living in a city today sees over 5,000 ads per day, so how can we target successful ad placement in a world where food related ads are everywhere? As a business case study to address this, we work as an ads strategy consultant to businesses selling products and services related to the food industry (Williams-Sonoma, KitchenAid, Blue Apron, Hello Fresh, etc…). They are targeting Spoonacular.com to run ads. Spoonacular is a popular recipe aggregating website and app for users to look up recipes by ingredient, by nutritional content, by price, and more. The Spoonacular API includes over 360,000 recipes as well as an open source recipe database. Our clients only want to spend money to run ads on webpages that they know people will visit a lot. In this case, without knowing how many people visited each recipe page on Spoonacular, we will use “Likes” as our proxy metric for web-traffic.
+
 
 ### Project Goals
-The goals for the project are as follows:
+The goals for the project:
 
-   -  Based on our findings, we will provide at least 3 insights to figure out what predicts a "popular" recipe.
-   -  We will arrive at these recommendations by analyzing data from Spoonacular. Spoonacular is a popular app for users to look up recipes by ingredient, by nutritional content, by price, and more. The Spoonacular API includes over 360,000 recipes as well as an open source recipe database.
+   -  We want to predict if a recipe will be  "liked" a lot, to understand where to run ads.
+   -  We want to build a classification model that will predict whether a recipe will be "highly liked" or not. This way, we will be able to determine where to run ads, when a new recipe is posted on Spoonacular.
 
 ### Methodology 
    -  Generate business application.
-   -  Generate 3 questions related to the business application.
    -  Find and select a source of data to draw from and analyze (Spoonacular).
    -  Identify predictor and target variables to focus on.
-   -  Generate criteria and call data from the API.
+   -  Generate criteria and call data sorted by popularity from the API.
    -  Merge all API calls into one raw dataframe, and export to CSV.
    -  Clean data as needed.
    -  Perform Exploratory Data Analysis (EDA) to investigate the data.
-   -  Perform statistical testing on each of the 3 hypotheses.
-   -  Generate linear regressions to fit the training data.
-   -  Perform hyperparameter tuning on the models.
-   -  Test models on the test data.
-   -  Evaluate the ability of the model to predict our target variable (find R-Squared).
-   -  Create a presentation to translate findings into actionable insights for business application. 
+   -  Determine criteria for classification.
+   -  Generate logistic regression model based on criteria to fit the training data.
+   -  Fit additional models using Ridge and Lasso regularization to compare with "vanilla" logistic regression model.
+   -  Perform hyperparameter tuning using RandomSearchCV / GridSearchCV.
+   -  Test the optimized training model on the test data and evaluate score.
+   -  Plot Receiver Operating Characteristic (ROC) curve and calculate AUC to evaluate model performance on test data.
+   -  Create a presentation to translate findings into actionable insights for the business application. 
 
 ### Project Responsibilities
-The project responsibilities are broken down as follows:
+The project responsibilities:
 
 #### Alex Cheng
    -  SHARED - The README.md.
