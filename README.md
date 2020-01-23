@@ -7,7 +7,7 @@ This README.md lists project members, goals, responsibilities, and a summary of 
    - <b>[/Data](/Data)</b> - all data called from the Spoonacular API saved out as .csv files.
    - <b>[/Images](/Images)</b> - all plots from data analysis.
    - <b>[/Jupyter_Notebooks](/Jupyter_Notebooks)</b> - Jupyter Notebooks generated for this project.
-   - <b>[/Linear_Regression_Trial](/Linear_Regression_Trial)</b> - Linear regression was attempted for this project, but was not used to generate the final business recommendation - this working code can be found in this folder.
+   - <b>[/Linear_Regression_Trial](/Linear_Regression_Trial)</b> - Linear regression working code (not used for the final business recommendation).
    - <b>[/Logistic_Regression_Final](/Logistic_Regression_Final)</b> - Logistic regression code.
    - <b>[/Project_Prompt](/Project_Prompt)</b> - the prompt for this project.
    - <b>[/Python_Files](/Python_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
