@@ -1,4 +1,4 @@
-# Spoonacular Recipe Ad Strategy
+# Spoonacular Recipe Ad Targeting
 This README.md lists project members, goals, responsibilities, and a summary of the files in the repository.
 
 ### Project File Summary
