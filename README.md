@@ -1,6 +1,6 @@
 # Spoonacular Recipe Ad Targeting
-This README.md lists project members, goals, responsibilities, and a summary of the files in the repository.
 
+#
 ### Project File Summary
 
    - <b>[README.md](README.md)</b> - a summary of all contents in this repository.
@@ -9,12 +9,14 @@ This README.md lists project members, goals, responsibilities, and a summary of 
    - <b>[/Logistic_Regression_Final](/Logistic_Regression_Final)</b> - Logistic regression code.
    - <b>[/Project_Prompt](/Project_Prompt)</b> - the prompt for this project.
    - <b>[/Python_Files](/Python_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
-   
+
+#
 ### Project Members
 
    - <b>[Alex Cheng](https://github.com/alexwcheng)</b>
    - <b>[Nimu Sidhu](https://github.com/gksidhu)</b>
 
+#
 ### Project Scenario
 
 Total U.S. spending on food advertising was $151 billion dollars in 2018. This was a 4.1% increase from 2017. According to the New York Times, a person living in a city today sees over 5,000 ads per day, so how can we target successful ad placement in a world where food related ads are everywhere? As a business case study to address this, we work as an ads strategy consultant to businesses selling products and services related to the food industry, such as: Williams-Sonoma, KitchenAid, Blue Apron, and Hello Fresh. They are targeting <b>[Spoonacular.com](https://spoonacular.com/)</b> to run ads. Spoonacular is a popular recipe aggregating website and app for users to look up recipes by ingredient, by nutritional content, by price, and more. The <b>[Spoonacular API](https://spoonacular.com/food-api)</b> includes over 360,000 recipes as well as an open source recipe database. Our clients only want to spend money to run ads on webpages that they know people will visit a lot. In this case, without knowing how many people visited each recipe page on Spoonacular, we will use “Likes” as our proxy metric for web-traffic.
@@ -24,6 +26,7 @@ Total U.S. spending on food advertising was $151 billion dollars in 2018. This w
    -  We want to predict if a recipe will be  "liked" a lot, to understand where to run ads.
    -  We want to build a classification model that will predict whether a recipe will be "highly liked" or not. This way, we will be able to determine where to run ads, when a new recipe is posted on Spoonacular.
 
+#
 ### Methodology 
 
    -  Generate business application.
@@ -41,6 +44,7 @@ Total U.S. spending on food advertising was $151 billion dollars in 2018. This w
    -  Plot Receiver Operating Characteristic (ROC) curve and calculate AUC to evaluate model performance on test data.
    -  Create a presentation to translate findings into actionable insights for the business application. 
 
+#
 ### Project Responsibilities
 
    -  All project responsibilities were shared equally between <b>[Alex Cheng](https://github.com/alexwcheng)</b> and <b>[Nimu Sidhu](https://github.com/gksidhu)</b>.
