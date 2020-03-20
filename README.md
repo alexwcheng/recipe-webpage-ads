@@ -1,6 +1,5 @@
 # Spoonacular Recipe Ad Targeting
 
-#
 ### Project File Summary
 
    - <b>[README.md](README.md)</b> - a summary of all contents in this repository.
