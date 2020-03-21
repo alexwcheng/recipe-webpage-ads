@@ -6,7 +6,7 @@
    - <b>[Data](/Data)</b> - All data called from the Spoonacular API saved out as .csv files.
    - <b>[Images](/Images)</b> - Exported plots + additional graphics.
    - <b>[Linear_Regression_Trial](/Linear_Regression_Trial)</b> - Linear regression working code (not used for the final business recommendation).
-   - <b>[Logistic_Regression_Final](/Logistic_Regression_Final)</b> - Logistic regression code.
+   - <b>[Logistic_Regression_Final](/Logistic_Regression_Final)</b> - Logistic regression code in Jupyter Notebooks.
    - <b>[Project_Prompt](/Project_Prompt)</b> - The prompt for this project.
    - <b>[Python_Files](/Python_Files)</b> - .py files loaded / imported in the Jupyter Notebooks.
 
