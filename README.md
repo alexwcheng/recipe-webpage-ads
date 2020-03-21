@@ -61,6 +61,14 @@ In order to extract as many features as possible from the data, the Spoonacular 
 #
 ### Exploratory Data Analysis
 
+**Surprisingly, "Price" of a recipe does not seem to have a strong correlation with "Likes".** The distribution seems to be scattered and not very clear. One might initially think that a higher cost of ingredients would decrease the popularity of a recipe. 
+
+![Price_Versus_Likes](/Images/Price_Versus_Likes.png)
+
+**Recipe "Calorie" content does not seem to have a strong correlation with "Likes" either.** One might presume that if a recipe is high-calorie, then it might be a bit of a turn off to health-conscious people - therefore being less popular. But on the flip-side, people also really like high-calorie foods. Perhaps high-calorie comfort foods like cakes and cookies are popular simply for sheer taste and pleasure, and people don't really care about calories to like a particular recipe.
+
+![Calories_Versus_Likes](/Images/Calories_Versus_Likes.png)
+
 There seemed to be some multicollinearity among the predicting variables. A **collinearity heatmap** helps to visualize the strength of correlation between all predicting variables.
 
 ![Multicollinearity_Heatmap](/Images/Multicollinearity_Heatmap.png)
