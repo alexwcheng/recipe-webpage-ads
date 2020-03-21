@@ -1,4 +1,4 @@
-# Spoonacular Recipe Ad Targeting
+# Recipe Ad Targeting
 
 ### Project File Summary
 
@@ -35,11 +35,11 @@ Total U.S. spending on food advertising was $151 billion dollars in 2018. This w
 
 **This is an example of a recipe webpage on Spoonacular where we WOULD want to run ads.** The recipe is very highly liked by Spoonacular users, which means that people are probably visiting this recipe page very often. Therefore, it is likely that our ad would be seen by lots of people!
 
-![Computer_Ads.png](/Images/Slides/Computer_Ads.png)
+![Computer_Ads_2.png](/Images/Slides/Computer_Ads_2.png)
 
 **This is an example of a recipe webpage on Spoonacular where we WOULD NOT want to run ads.** This recipe only has 1 "Like". (Probably the person who made the recipe, honestly.) This means that people are probably not visiting this recipe page very often, so an ad on this page would not get seen very much.
 
-![Computer_No_Ads.png](/Images/Slides/Computer_No_Ads.png)
+![Computer_No_Ads_2.png](/Images/Slides/Computer_No_Ads_2.png)
    
 # 
 ### Data
