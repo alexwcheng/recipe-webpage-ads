@@ -123,6 +123,8 @@ To graphically evaluate model performance on test data, we plotted the "Receiver
 - Train AUC: 0.688
 - Test AUC: 0.665
 
+![ROC_Curve](/Images/ROC_Curve.png)
+
 To deepen our understanding on model performance, we also plotted confusion matrices for model predictions on train data, and model predictions on test data.
 
 **Confusion Matrix Results - TRAIN DATA**
