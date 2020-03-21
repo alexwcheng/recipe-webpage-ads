@@ -77,8 +77,8 @@ To compare with our "vanilla" logistic regression model made with Statsmodels, w
 #
 ### Model Results
 
-**Accuracy - Tuned Model - TRAIN DATA:**
-   - 0.636
+**Tuned Model - TRAIN DATA:**
+   - Accuracy = 0.636
    
 **3-Fold Cross-Validation, to ensure our model performance is not due to random chance:**
    - CV 1 - Accuracy = 0.62
@@ -88,8 +88,8 @@ To compare with our "vanilla" logistic regression model made with Statsmodels, w
    - This closely matches the mean accuracy (0.636) of the model.
    - So our model accuracy was probably not due to random chance.
    
-**Accuracy - Tuned Model - TEST DATA:**
-   - 0.664
+**Tuned Model - TEST DATA:**
+   - Accuracy = 0.664
    - This accuracy of predicting test data is very close to that of the training data.
    - This is good! We did not overfit to the training data.
 
