@@ -32,6 +32,14 @@ Total U.S. spending on food advertising was $151 billion dollars in 2018. This w
 - We want to predict if a recipe will be  "liked" a lot, to understand where to run ads.
 - We want to build a classification model that will predict whether a recipe will be "highly liked" or not. 
 - This way, we will be able to determine where to run ads, when a new recipe is posted on Spoonacular.
+
+**This is an example of a recipe webpage on Spoonacular where we WOULD want to run ads.** The recipe is very highly liked by Spoonacular users, which means that people are probably visiting this recipe page very often. Therefore, it is likely that our ad would be seen by lots of people!
+
+![Computer_Ads.png](/Images/Slides/Computer_Ads.png)
+
+**This is an example of a recipe webpage on Spoonacular where we WOULD NOT want to run ads.** This recipe only has 1 "Like". (Probably the person who made the recipe, honestly.) This means that people are probably not visiting this recipe page very often, so an ad on this page would not get seen very much.
+
+![Computer_No_Ads.png](/Images/Slides/Computer_No_Ads.png)
    
 # 
 ### Data
@@ -53,9 +61,17 @@ In order to extract as many features as possible from the data, the Spoonacular 
 #
 ### Exploratory Data Analysis
 
-In general, there was little or no multicollinearity among the independent variables. We understood that macro and micronutrients are likely to have high multicollinearity and tested for this.
+There seemed to be some multicollinearity among the predicting variables. A **collinearity heatmap** helps to visualize the strength of correlation between all predicting variables.
 
-In our exploratory data analysis, we see that the dependent variable, Likes, has an exponential distribution. While there is a linear relationship between log odds and some predictors, this is not a majority case.
+![Multicollinearity_Heatmap](/Images/Multicollinearity_Heatmap.png)
+
+In the histogram of "Likes" we can see that our target variable seems to have an **exponential** distribution.
+
+![Likes_Histogram](/Images/Likes_Histogram.png)
+
+The cumulative distribution function (CDF) plot of "Likes" in our dataset shows a **logarithmic** relationship between "Likes" and cumulative probability. This means that recipes get rarer and rarer to find as their number of "Likes" increases.
+
+![Likes_CDF.png](/Images/Likes_CDF.png)
 
 #
 ### Data Preprocessing
@@ -103,6 +119,8 @@ To deepen our understanding on model performance, we also plotted confusion matr
 
 **Confusion Matrix Results - TRAIN DATA**
 
+![Confusion_Matrix_Train_Data](/Images/Confusion_Matrix_Train_Data.png)
+
 - Out of 750 observations:
    - 226 recipes were predicted as a "winner" when it really was a "winner". (True Positives)
    - 124 recipes were predicted as a "winner" when it really was a "loser". (False Positives)
@@ -110,6 +128,8 @@ To deepen our understanding on model performance, we also plotted confusion matr
    - 149 recipes were predicted as a "loser" when it really was a "winner". (False Negatives)
    
 **Confusion Matrix Results - TEST DATA**
+
+![Confusion_Matrix_Test_Data](/Images/Confusion_Matrix_Test_Data.png)
 
 - Out of 250 observations:
    - 77 recipes were predicted as a "winner" when it really was a "winner". (True Positives)
@@ -126,8 +146,12 @@ To deepen our understanding on model performance, we also plotted confusion matr
    - Precision = Number Of Good Investments / Total Number Of Investments
    - Precision = True Positives / (True Positives + False Positives)
    - Precision = 77 / (77 + 36) = **68.1%**
+   
+   ![Precision_Calculation](/Images/Slides/Precision_Calculation.png)
 
 **RECOMMENDATION: With a precision of 68.1% on our test data, for every 3 ads invested, 2 ads will be a good investment and 1 ad may be a loss. With these odds, we recommend that our clients follow the model to invest in ads on Spoonacular!**
+
+![Recommendation](/Images/Slides/Recommendation.png)
 
 #
 ### Future Work
