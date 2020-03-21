@@ -154,12 +154,8 @@ To deepen our understanding on model performance, we also plotted confusion matr
    - Precision = Number Of Good Investments / Total Number Of Investments
    - Precision = True Positives / (True Positives + False Positives)
    - Precision = 77 / (77 + 36) = **68.1%**
-   
-   ![Precision_Calculation](/Images/Slides/Precision_Calculation.png)
 
 **RECOMMENDATION: With a precision of 68.1% on our test data, for every 3 ads invested, 2 ads will be a good investment and 1 ad may be a loss. With these odds, we recommend that our clients follow the model to invest in ads on Spoonacular!**
-
-![Recommendation](/Images/Slides/Recommendation.png)
 
 #
 ### Future Work
