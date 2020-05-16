@@ -62,6 +62,9 @@ In order to extract as many features as possible from the data, the Spoonacular 
 #
 ### Exploratory Data Analysis
 
+A Tableau dashboard was created to get a comprehensive understanding of the categorical and numerical data, all in one place. A static preview of this dashboard is displayed below. The fully interactive Tableau dashboard can be explored here: https://public.tableau.com/profile/alexander.cheng#!/vizhome/RecipeWebpageAds/RecipeWebpageAds
+![Recipe_Webpage_Ads_Tableau_Dashboard.jpg](/Images/Recipe_Webpage_Ads_Tableau_Dashboard.jpg)
+
 **Surprisingly, "Price" of a recipe does not seem to have a strong correlation with "Likes".** The distribution seems to be scattered and not very clear. One might initially think that a higher cost of ingredients would decrease the popularity of a recipe. 
 
 ![Price_Versus_Likes](/Images/Price_Versus_Likes.png)
